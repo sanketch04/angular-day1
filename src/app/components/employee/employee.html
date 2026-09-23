@@ -20,7 +20,7 @@
     <label>Department</label>
     <input type="text" placeholder="Enter department" [(ngModel)]="department" />
   </div>
-
+  <button (click)="showMessage()">Submit</button>
   <hr />
 
   <div class="employee-details" appHighlight>
@@ -31,4 +31,5 @@
     <p>Employee Email: {{ email }}</p>
     <p>Employee Department: {{ department }}</p>
   </div>
+
 </div>

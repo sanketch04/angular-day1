@@ -13,4 +13,8 @@ export class Employee {
   age = 0;
   email = '';
   department = '';
+
+  showMessage() {
+    alert('Employee Details Submitted Successfully');
+  }
 }
