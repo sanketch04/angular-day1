@@ -1,14 +1,16 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { CapitalizePipe } from '../../pipes/capitalize-pipe';
+import { UppercasePipe } from '../../pipes/uppercase-pipe';
 
 @Component({
   selector: 'app-home',
-  imports: [NgFor, NgIf, CapitalizePipe],
+  imports: [NgFor, NgIf, CapitalizePipe, UppercasePipe],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home {
+
   employees = [
     {
       name: 'sanket',
@@ -26,5 +28,6 @@ export class Home {
       department: 'Finance',
     },
   ];
+
   showEmployee = true;
 }
