@@ -1,10 +1,11 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { StudentService } from '../../services/student';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-api-student',
-  imports: [NgFor, NgIf],
+  imports: [NgFor, RouterLink],
   templateUrl: './api-student.html',
   styleUrl: './api-student.css'
 })
@@ -12,19 +13,17 @@ export class ApiStudent {
 
   students: any[] = [];
 
-  private readonly imageBaseUrl = 'https://localhost:7075';
-
   constructor(private studentService: StudentService) {}
 
   ngOnInit() {
 
-    this.studentService.getStudents(1, 10).subscribe({
+    this.studentService.getStudents().subscribe({
 
-      next: (data: any) => {
+      next: (data: any[]) => {
 
         console.log('API RESPONSE:', data);
 
-        this.students = data.items;
+        this.students = data;
 
       },
 
@@ -35,15 +34,5 @@ export class ApiStudent {
       }
 
     });
-
-  }
-
-  getImageUrl(imagePath: string | null): string {
-
-    if (!imagePath) {
-      return '';
-    }
-
-    return `${this.imageBaseUrl}${imagePath}`;
   }
 }

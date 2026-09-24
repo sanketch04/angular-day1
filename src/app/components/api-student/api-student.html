@@ -1,34 +1,12 @@
 <div class="student-container">
-
   <div class="page-header">
     <h2>Students From API</h2>
-    <p>Student data loaded from the ASP.NET Core API</p>
+    <p>Student data loaded from a fake API</p>
   </div>
 
   <div class="student-grid">
-
     <div class="student-card" *ngFor="let student of students">
-
-      <!-- Image -->
-      <div class="student-image">
-
-        <img
-          *ngIf="student.imagePath; else noImage"
-          [src]="getImageUrl(student.imagePath)"
-          [alt]="student.name"
-        />
-
-        <ng-template #noImage>
-          <div class="no-image">
-            No Image
-          </div>
-        </ng-template>
-
-      </div>
-
-      <!-- Student Information -->
       <div class="student-info">
-
         <h3>{{ student.name }}</h3>
 
         <div class="info-row">
@@ -37,24 +15,28 @@
         </div>
 
         <div class="info-row">
-          <span class="label">Address</span>
-          <span>{{ student.address }}</span>
+          <span class="label">Username</span>
+          <span>{{ student.username }}</span>
         </div>
 
         <div class="info-row">
-          <span class="label">Department</span>
-          <span>{{ student.departmentName }}</span>
+          <span class="label">Email</span>
+          <span>{{ student.email }}</span>
         </div>
 
         <div class="info-row">
-          <span class="label">Gender</span>
-          <span>{{ student.gender }}</span>
+          <span class="label">Phone</span>
+          <span>{{ student.phone }}</span>
         </div>
 
+        <div class="info-row">
+          <span class="label">Website</span>
+          <span>{{ student.website }}</span>
+        </div>
+
+        <!-- View Details -->
+        <a [routerLink]="['/students', student.id]" class="details-button"> View Details </a>
       </div>
-
     </div>
-
   </div>
-
 </div>

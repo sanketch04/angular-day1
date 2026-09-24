@@ -1,15 +1,20 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class StudentService {
-  private apiUrl = 'https://localhost:7075/api/Student';
+
+  private apiUrl = 'https://jsonplaceholder.typicode.com/users';
 
   constructor(private http: HttpClient) {}
 
-  getStudents(pageNumber: number, pageSize: number) {
-    return this.http.get(`${this.apiUrl}?pageNumber=${pageNumber}&pageSize=${pageSize}`);
+  getStudents() {
+    return this.http.get<any[]>(this.apiUrl);
+  }
+
+  getStudentById(id: number) {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 }

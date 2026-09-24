@@ -1,5 +1,21 @@
-<a routerLink="/day1">Day1</a> |
-<a routerLink="/day2">Day2</a> |
-<a routerLink="/day3">Day3</a> |
 
-<router-outlet></router-outlet>
+<nav class="navbar">
+  <div class="nav-container">
+
+    <div class="logo">
+      Angular Training
+    </div>
+
+    <div class="nav-links">
+      <a routerLink="/day1" routerLinkActive="active">Day 1</a>
+      <a routerLink="/day2" routerLinkActive="active">Day 2</a>
+      <a routerLink="/day3" routerLinkActive="active">Day 3</a>
+      <a routerLink="/day4" routerLinkActive="active">Day 4</a>
+    </div>
+
+  </div>
+</nav>
+
+<main class="content">
+  <router-outlet></router-outlet>
+</main>
