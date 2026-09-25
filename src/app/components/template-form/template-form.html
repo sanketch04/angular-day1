@@ -1,0 +1,70 @@
+<h2 class="form-title">Registration Form</h2>
+
+<form
+  #registrationForm="ngForm"
+  (ngSubmit)="submitForm(registrationForm)"
+  class="registration-form"
+>
+  <!-- Name -->
+
+  <div class="form-group">
+    <label for="name">Name</label>
+
+    <input
+      id="name"
+      type="text"
+      [(ngModel)]="name"
+      name="name"
+      required
+      #nameControl="ngModel"
+      placeholder="Enter your name"
+    />
+    <p class="error" *ngIf="nameControl.invalid && nameControl.touched">Name is required.</p>
+  </div>
+
+  <!-- Email -->
+
+  <div class="form-group">
+    <label for="email">Email</label>
+
+    <input
+      id="email"
+      type="email"
+      [(ngModel)]="email"
+      name="email"
+      required
+      email
+      #emailControl="ngModel"
+      placeholder="Enter your email"
+    />
+
+    <p class="error" *ngIf="emailControl.invalid && emailControl.touched">
+      Please enter a valid email address.
+    </p>
+  </div>
+
+  <!-- Age -->
+
+  <div class="form-group">
+    <label for="age">Age</label>
+
+    <input
+      id="age"
+      type="number"
+      [(ngModel)]="age"
+      name="age"
+      required
+      min="18"
+      #ageControl="ngModel"
+      placeholder="Enter your age"
+    />
+
+    <p class="error" *ngIf="ageControl.invalid && ageControl.touched">Age must be at least 18.</p>
+  </div>
+
+  <!-- Submit -->
+
+  <button type="submit" [disabled]="registrationForm.invalid" class="submit-button">
+    Register
+  </button>
+</form>

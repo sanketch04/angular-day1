@@ -1,0 +1,54 @@
+<div class="form-container">
+  <h2>Reactive Registration Form</h2>
+
+  <form [formGroup]="registrationForm" (ngSubmit)="submitForm()">
+    <!-- Name -->
+
+    <div class="form-group">
+      <label>Name</label>
+
+      <input type="text" formControlName="name" placeholder="Enter your name" />
+
+      @if (registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched) {
+        <p class="error">Name is required.</p>
+      }
+    </div>
+
+    <!-- Email -->
+
+    <div class="form-group">
+      <label>Email</label>
+
+      <input type="email" formControlName="email" placeholder="Enter your email" />
+
+      @if (registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched) {
+        <p class="error">Please enter a valid email.</p>
+      }
+    </div>
+
+    <!-- Age -->
+
+    <div class="form-group">
+      <label>Age</label>
+
+      <input type="number" formControlName="age" placeholder="Enter your age" />
+
+      @if (registrationForm.get('age')?.invalid && registrationForm.get('age')?.touched) {
+        <p class="error">Age must be at least 18.</p>
+      }
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+
+      <input type="password" formControlName="password" placeholder="Enter your password" />
+
+      @if (registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched) {
+        <p class="error">Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number.</p>
+      }
+    </div>
+
+    <!-- Submit -->
+
+    <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+  </form>
+</div>

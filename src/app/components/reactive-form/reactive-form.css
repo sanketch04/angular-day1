@@ -1,0 +1,112 @@
+.form-container {
+width: 420px;
+margin: 60px auto;
+padding: 35px;
+background: #ffffff;
+border-radius: 14px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+box-sizing: border-box;
+}
+
+.form-container h2 {
+text-align: center;
+margin: 0 0 30px;
+font-size: 26px;
+font-weight: 700;
+color: #222;
+}
+
+/* Form Group */
+
+.form-group {
+margin-bottom: 22px;
+}
+
+/* Labels */
+
+.form-group label {
+display: block;
+margin-bottom: 8px;
+font-size: 14px;
+font-weight: 600;
+color: #333;
+}
+
+/* Inputs */
+
+.form-group input {
+width: 100%;
+padding: 12px 14px;
+box-sizing: border-box;
+
+border: 1px solid #d0d0d0;
+border-radius: 7px;
+
+font-size: 15px;
+color: #222;
+
+outline: none;
+transition: 0.2s ease;
+}
+
+/* Input focus */
+
+.form-group input:focus {
+border-color: #333;
+box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Valid input */
+
+.form-group input.ng-valid.ng-touched {
+border-color: #198754;
+}
+
+/* Invalid input */
+
+.form-group input.ng-invalid.ng-touched {
+border-color: #dc3545;
+}
+
+/* Error message */
+
+.error {
+margin: 7px 0 0;
+color: #dc3545;
+font-size: 13px;
+}
+
+/* Submit button */
+
+button {
+width: 100%;
+padding: 13px;
+
+border: none;
+border-radius: 7px;
+
+background: #222;
+color: white;
+
+font-size: 16px;
+font-weight: 600;
+
+cursor: pointer;
+transition: 0.2s ease;
+}
+
+/* Button hover */
+
+button:hover:not(:disabled) {
+background: #000;
+transform: translateY(-1px);
+}
+
+/* Disabled button */
+
+button:disabled {
+background: #aaa;
+color: #eee;
+cursor: not-allowed;
+transform: none;
+}
