@@ -1,0 +1,29 @@
+<div class="task-container">
+  <h2>NgRx Task Manager</h2>
+
+  <div class="add-task">
+    <input #taskInput type="text" placeholder="Enter task" />
+
+    <button (click)="addTask(taskInput.value); taskInput.value = ''">Add Task</button>
+
+    <button (click)="loadTasks()">Load Tasks From API</button>
+  </div>
+
+  <div class="task-list">
+    @for (task of tasks$ | async; track task.id) {
+      <div class="task-card">
+        <span [class.completed]="task.completed">
+          {{ task.title }}
+        </span>
+
+        <div>
+          <button (click)="toggleTask(task.id)">
+            {{ task.completed ? 'Undo' : 'Complete' }}
+          </button>
+
+          <button (click)="deleteTask(task.id)">Delete</button>
+        </div>
+      </div>
+    }
+  </div>
+</div>

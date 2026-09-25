@@ -11,6 +11,7 @@ import { authGuard } from './guards/auth-guard';
 import { Login } from './components/login/login';
 import { TemplateForm } from './components/template-form/template-form';
 import { ReactiveForm } from './components/reactive-form/reactive-form';
+import { TaskList } from './components/task-list/task-list';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -22,18 +23,13 @@ export const routes: Routes = [
   { path: 'day3', component: ApiStudent },
 
   {
-    path: 'students/:id', //parameterized route for student details dynamic id 
+    path: 'students/:id', //parameterized route for student details dynamic id
     component: StudentDetails,
   },
-  { path: 'login',
-    component: Login 
-  },
-  { path: 'day5',
-    component: TemplateForm 
-  },
-  { path: 'day5RF',
-    component: ReactiveForm 
-  },
+  { path: 'login', component: Login },
+  { path: 'day5', component: TemplateForm },
+  { path: 'day5RF', component: ReactiveForm },
+  { path: 'day6', component: TaskList },
   {
     path: 'admin',
     loadComponent: () => import('./components/admin/admin').then((m) => m.Admin), //lazy loading of admin component

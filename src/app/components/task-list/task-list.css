@@ -1,0 +1,194 @@
+.task-container {
+width: 650px;
+margin: 50px auto;
+padding: 30px;
+
+background: #ffffff;
+border-radius: 14px;
+
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Heading */
+
+.task-container h2 {
+margin: 0 0 25px;
+
+text-align: center;
+
+font-size: 28px;
+font-weight: 700;
+
+color: #222;
+}
+
+/* Add Task Section */
+
+.add-task {
+display: flex;
+gap: 10px;
+
+margin-bottom: 25px;
+}
+
+.add-task input {
+flex: 1;
+
+padding: 12px 14px;
+
+border: 1px solid #ccc;
+border-radius: 7px;
+
+font-size: 15px;
+
+outline: none;
+}
+
+.add-task input:focus {
+border-color: #333;
+
+box-shadow:
+0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Add Button */
+
+.add-task button {
+padding: 12px 20px;
+
+border: none;
+border-radius: 7px;
+
+background: #222;
+color: white;
+
+font-size: 15px;
+font-weight: 600;
+
+cursor: pointer;
+
+transition: 0.2s ease;
+}
+
+.add-task button:hover {
+background: #000;
+
+transform: translateY(-1px);
+}
+
+/* Task List */
+
+.task-list {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+/* Individual Task */
+
+.task-card {
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+padding: 15px 18px;
+
+border: 1px solid #e0e0e0;
+border-radius: 8px;
+
+background: #fafafa;
+
+transition: 0.2s ease;
+}
+
+.task-card:hover {
+background: #f5f5f5;
+
+box-shadow:
+0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Task Title */
+
+.task-card span {
+font-size: 16px;
+font-weight: 500;
+
+color: #333;
+}
+
+/* Completed Task */
+
+.task-card span.completed {
+text-decoration: line-through;
+
+color: #888;
+}
+
+/* Action Buttons */
+
+.task-card > div {
+display: flex;
+gap: 8px;
+}
+
+.task-card button {
+padding: 8px 12px;
+
+border: none;
+border-radius: 6px;
+
+font-size: 13px;
+font-weight: 600;
+
+cursor: pointer;
+
+transition: 0.2s ease;
+}
+
+/* Complete / Undo */
+
+.task-card button:first-child {
+background: #e9ecef;
+color: #222;
+}
+
+.task-card button:first-child:hover {
+background: #d8dce0;
+}
+
+/* Delete */
+
+.task-card button:last-child {
+background: #dc3545;
+color: white;
+}
+
+.task-card button:last-child:hover {
+background: #bb2d3b;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+.task-container {
+width: auto;
+margin: 20px;
+padding: 20px;
+}
+
+.add-task {
+flex-direction: column;
+}
+
+.task-card {
+flex-direction: column;
+align-items: stretch;
+gap: 12px;
+}
+
+.task-card > div {
+justify-content: flex-end;
+}
+}
